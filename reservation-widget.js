@@ -14,7 +14,7 @@
 
     // 2. Create the iframe for the reservation widget content
     var resIframe = document.createElement('iframe');
-    resIframe.src = 'https://example.com/reservation-widget';
+    resIframe.src = 'https://app.inservo.co.uk/widget/restaurants/6718dc7499e54be8fc16c426/reservo';
     resIframe.width = '80%'; 
     resIframe.height = '80%'; 
     resIframe.style.border = 'none';
