@@ -1,4 +1,3 @@
-<script>
 document.addEventListener('DOMContentLoaded', function() {
     (function() {
         // Create overlay container for the modal (hidden by default)
@@ -54,4 +53,3 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(openBtn);
     })()
 });
-</script>
