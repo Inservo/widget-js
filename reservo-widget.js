@@ -1,4 +1,3 @@
-<script>
 // Immediately Invoked Function to avoid polluting global scope
 (function() {
     // 1. Create a container <div> for the chat widget
@@ -24,4 +23,3 @@
     widgetContainer.appendChild(iframe);
     document.body.appendChild(widgetContainer);
 })();
-</script>
