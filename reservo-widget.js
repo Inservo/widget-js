@@ -14,7 +14,7 @@
 
     // 2. Create the iframe element pointing to the widget URL
     var iframe = document.createElement('iframe');
-    iframe.src = 'https://example.com/reservo-widget';  // URL of the chat widget content
+    iframe.src = 'https://app.inservo.co.uk/widget/restaurants/6718dc7499e54be8fc16c426/reservo';  // URL of the chat widget content
     iframe.width = '100%';
     iframe.height = '100%';
     iframe.style.border = 'none';       // remove default iframe border
