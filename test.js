@@ -69,9 +69,7 @@
 
   closeButton.onclick = function () {
     modalContent.classList.remove("show");
-    setTimeout(function () {
-      modalOverlay.classList.remove("show");
-    }, 300);
+    modalOverlay.classList.remove("show");
     iframe.src = widgetUrl;
   };
   modalContent.appendChild(closeButton);
@@ -91,9 +89,7 @@
 
   button.onclick = function () {
     modalOverlay.classList.add("show");
-    setTimeout(function () {
-      modalContent.classList.add("show");
-    }, 10);
+    modalContent.classList.add("show");
   };
 
   var currentScript = document.currentScript;
