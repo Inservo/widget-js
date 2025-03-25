@@ -5,9 +5,11 @@
   button.style.all = "unset"
   button.style.padding = "8px 12px";
   button.style.backgroundColor = "#000000";
-  button.style.borderRadius = "50%";
+  button.style.borderRadius = "25%";
   button.style.color = "#FFFFFF";
   button.style.cursor = "pointer";
+  button.style.fontSize = "12px";
+  button.style.fontFamily = "Inter, sans-serif";
 
   var modalOverlay = document.createElement("div");
   Object.assign(modalOverlay.style, {
@@ -25,8 +27,7 @@
 
   var modalContent = document.createElement("div");
   Object.assign(modalContent.style, {
-    backgroundColor: "#fff",
-    padding: "20px",
+    backgroundColor: "transperent",
     borderRadius: "10px",
     position: "relative",
   });
