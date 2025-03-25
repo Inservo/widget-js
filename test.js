@@ -45,8 +45,11 @@
     fontSize: "20px",
     cursor: "pointer",
   });
+
   closeButton.onclick = function () {
     modalOverlay.style.visibility = "hidden";
+    iframe.src =
+      "http://localhost:5173/widget/restaurants/6734c0571d9a5ab4d0cf791f";
   };
 
   modalContent.appendChild(closeButton);
@@ -65,8 +68,6 @@
   document.body.appendChild(modalOverlay);
 
   button.onclick = function () {
-    iframe.src =
-      "http://localhost:5173/widget/restaurants/6734c0571d9a5ab4d0cf791f";
     modalOverlay.style.visibility = "visible";
   };
 
