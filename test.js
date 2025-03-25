@@ -1,4 +1,25 @@
 (function () {
+  var styleEl = document.createElement("style");
+  styleEl.innerHTML = `
+    @keyframes fadeInOverlay {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeOutOverlay {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+    @keyframes scaleInContent {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes scaleOutContent {
+      0% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(0.9); }
+    }
+  `;
+  document.head.appendChild(styleEl);
+
   var currentScript = document.currentScript;
   var widgetUrl = currentScript && currentScript.dataset.widgetUrl;
 
@@ -13,6 +34,7 @@
   button.style.cursor = "pointer";
   button.style.fontSize = "14px";
   button.style.fontFamily = "Inter, sans-serif";
+  button.style.boxSizing = "border-box";
   button.style.display = "inline-block";
 
   var modalOverlay = document.createElement("div");
@@ -23,11 +45,12 @@
     width: "100%",
     height: "100%",
     backgroundColor: "rgba(0, 0, 0, 0.5)",
-    visibility: "hidden",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     zIndex: "9999",
+    opacity: "0",
+    pointerEvents: "none",
   });
 
   var modalContent = document.createElement("div");
@@ -36,6 +59,7 @@
     padding: "10px",
     borderRadius: "10px",
     position: "relative",
+    opacity: "0",
   });
 
   var closeButton = document.createElement("button");
@@ -51,11 +75,13 @@
   });
 
   closeButton.onclick = function () {
-    modalOverlay.style.visibility = "hidden";
-    iframe.src =
-      widgetUrl;
+    modalOverlay.style.animation = "fadeOutOverlay 0.5s forwards";
+    modalContent.style.animation = "scaleOutContent 0.5s forwards";
+    setTimeout(function () {
+      modalOverlay.style.pointerEvents = "none";
+    }, 500);
+    iframe.src = widgetUrl;
   };
-
   modalContent.appendChild(closeButton);
 
   var iframe = document.createElement("iframe");
@@ -72,15 +98,15 @@
   document.body.appendChild(modalOverlay);
 
   button.onclick = function () {
-    modalOverlay.style.visibility = "visible";
+    modalOverlay.style.pointerEvents = "auto";
+    modalOverlay.style.animation = "fadeInOverlay 0.5s forwards";
+    modalContent.style.animation = "scaleInContent 0.5s forwards";
   };
 
-  // Attempt to insert the button after the current script tag
   var currentScript = document.currentScript;
   if (currentScript && currentScript.parentNode) {
     currentScript.parentNode.insertBefore(button, currentScript.nextSibling);
   } else {
-    // Fallback: Append to the body if currentScript isn't available
     document.body.appendChild(button);
   }
 })();
