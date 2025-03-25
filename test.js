@@ -5,8 +5,67 @@
   button.style.all = "unset"
   button.style.padding = "8px 12px";
   button.style.backgroundColor = "#000000";
-  button.style.radius = "50%";
-  button.style.color = "#FFFFFF"
+  button.style.borderRadius = "50%";
+  button.style.color = "#FFFFFF";
+  button.style.cursor = "pointer";
+
+  var modalOverlay = document.createElement("div");
+  Object.assign(modalOverlay.style, {
+    position: "fixed",
+    top: "0",
+    left: "0",
+    width: "100%",
+    height: "100%",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    display: "none",
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: "9999",
+  });
+
+  var modalContent = document.createElement("div");
+  Object.assign(modalContent.style, {
+    backgroundColor: "#fff",
+    padding: "20px",
+    borderRadius: "10px",
+    position: "relative",
+  });
+
+  var closeButton = document.createElement("button");
+  closeButton.innerText = "X";
+  Object.assign(closeButton.style, {
+    position: "absolute",
+    top: "10px",
+    right: "10px",
+    background: "transparent",
+    border: "none",
+    fontSize: "20px",
+    cursor: "pointer",
+  });
+  closeButton.onclick = function () {
+    modalOverlay.style.display = "none";
+  };
+
+  modalContent.appendChild(closeButton);
+
+  var iframe = document.createElement("iframe");
+  iframe.src =
+    "http://localhost:5173/widget/restaurants/6734c0571d9a5ab4d0cf791f";
+  Object.assign(iframe.style, {
+    width: "512px",
+    height: "700px",
+    border: "none",
+  });
+
+  modalContent.appendChild(iframe);
+
+  modalOverlay.appendChild(modalContent);
+
+  document.body.appendChild(modalOverlay);
+
+  button.onclick = function () {
+    modalOverlay.style.display = "flex";
+  };
 
   // Attempt to insert the button after the current script tag
   var currentScript = document.currentScript;
