@@ -1,25 +1,25 @@
 (function () {
   var styleEl = document.createElement("style");
   styleEl.innerHTML = `
+    @keyframes overlayFadeIn {
+      from { background-color: rgba(0, 0, 0, 0); }
+      to { background-color: rgba(0, 0, 0, 0.5); }
+    }
+    @keyframes overlayFadeOut {
+      from { background-color: rgba(0, 0, 0, 0.5); }
+      to { background-color: rgba(0, 0, 0, 0); }
+    }
     .modal-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: transperent;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 9999;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease, transfor 0.3s ease;
-      will-change: opacity, transform;
-    }
-    .modal-overlay.show {
-      opacity: 1;
-      pointer-events: auto;
+      background-color: rgba(0, 0, 0, 0); /* start fully transparent */
     }
     .modal-content {
       background-color: #ffffff;
@@ -75,7 +75,10 @@
 
   closeButton.onclick = function () {
     modalContent.classList.remove("show");
-    modalOverlay.classList.remove("show");
+    modalOverlay.style.animation = "overlayFadeOut 0.3s forwards";
+    setTimeout(function () {
+      modalOverlay.style.animation = "";
+    }, 300);
     iframe.src = widgetUrl;
   };
   modalContent.appendChild(closeButton);
@@ -95,7 +98,13 @@
 
   button.onclick = function () {
     modalOverlay.classList.add("show");
-    modalContent.classList.add("show");
+    modalOverlay.style.animation = "overlayFadeIn 0.3s forwards";
+    setTimeout(function () {
+      modalOverlay.style.animation = "";
+    }, 300);
+    setTimeout(function () {
+      modalContent.classList.add("show");
+    }, 10);
   };
 
   var currentScript = document.currentScript;
