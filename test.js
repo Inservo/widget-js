@@ -1,4 +1,7 @@
 (function () {
+  var currentScript = document.currentScript;
+  var widgetUrl = currentScript && currentScript.dataset.widgetUrl;
+
   var button = document.createElement("button");
   button.innerText = "Book Now";
 
@@ -30,6 +33,7 @@
   var modalContent = document.createElement("div");
   Object.assign(modalContent.style, {
     backgroundColor: "#FFFFFF",
+    padding: "10px",
     borderRadius: "10px",
     position: "relative",
   });
@@ -49,14 +53,14 @@
   closeButton.onclick = function () {
     modalOverlay.style.visibility = "hidden";
     iframe.src =
-      "http://localhost:5173/widget/restaurants/6734c0571d9a5ab4d0cf791f";
+      widgetUrl;
   };
 
   modalContent.appendChild(closeButton);
 
   var iframe = document.createElement("iframe");
   iframe.src =
-    "http://localhost:5173/widget/restaurants/6734c0571d9a5ab4d0cf791f";
+    widgetUrl;
   Object.assign(iframe.style, {
     width: "512px",
     height: "700px",
