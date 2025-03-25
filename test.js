@@ -20,6 +20,7 @@
     width: "100%",
     height: "100%",
     backgroundColor: "rgba(0, 0, 0, 0.5)",
+    visibility: "hidden",
     display: "none",
     alignItems: "center",
     justifyContent: "center",
@@ -28,7 +29,7 @@
 
   var modalContent = document.createElement("div");
   Object.assign(modalContent.style, {
-    backgroundColor: "transperent",
+    backgroundColor: "FFFFFF",
     borderRadius: "10px",
     position: "relative",
   });
@@ -45,8 +46,7 @@
     cursor: "pointer",
   });
   closeButton.onclick = function () {
-    iframe.src = "http://localhost:5173/widget/restaurants/6734c0571d9a5ab4d0cf791f";
-    modalOverlay.style.display = "none";
+    modalOverlay.style.display = "hidden";
   };
 
   modalContent.appendChild(closeButton);
@@ -61,13 +61,13 @@
   });
 
   modalContent.appendChild(iframe);
-
   modalOverlay.appendChild(modalContent);
-
   document.body.appendChild(modalOverlay);
 
   button.onclick = function () {
-    modalOverlay.style.display = "flex";
+    iframe.src =
+      "http://localhost:5173/widget/restaurants/6734c0571d9a5ab4d0cf791f";
+    modalOverlay.style.visibility = "visible";
   };
 
   // Attempt to insert the button after the current script tag
