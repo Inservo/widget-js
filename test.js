@@ -5,11 +5,12 @@
   button.style.all = "unset"
   button.style.padding = "8px 12px";
   button.style.backgroundColor = "#000000";
-  button.style.borderRadius = "25%";
+  button.style.borderRadius = "10%";
   button.style.color = "#FFFFFF";
   button.style.cursor = "pointer";
-  button.style.fontSize = "12px";
+  button.style.fontSize = "14px";
   button.style.fontFamily = "Inter, sans-serif";
+  button.style.display = "inline-block";
 
   var modalOverlay = document.createElement("div");
   Object.assign(modalOverlay.style, {
@@ -44,6 +45,7 @@
     cursor: "pointer",
   });
   closeButton.onclick = function () {
+    iframe.src = "http://localhost:5173/widget/restaurants/6734c0571d9a5ab4d0cf791f";
     modalOverlay.style.display = "none";
   };
 
