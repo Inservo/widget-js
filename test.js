@@ -90,7 +90,7 @@
     widgetUrl;
   Object.assign(iframe.style, {
     width: "512px",
-    height: "700px",
+    height: "min(700px, 90vh)",
     border: "none",
   });
   modalContent.appendChild(iframe);
