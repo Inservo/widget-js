@@ -8,13 +8,13 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.5);
-      display: none; /* Hidden by default */
+      display: none;
       align-items: center;
       justify-content: center;
       z-index: 9999;
     }
     .modal-overlay.show {
-      display: flex; 
+      display: flex;
     }
     .modal-content {
       background-color: #ffffff;
@@ -68,8 +68,10 @@
   });
 
   closeButton.onclick = function () {
-    modalOverlay.classList.remove("show");
     modalContent.classList.remove("show");
+    setTimeout(function () {
+      modalOverlay.classList.remove("show");
+    }, 300);
     iframe.src = widgetUrl;
   };
   modalContent.appendChild(closeButton);
@@ -89,7 +91,9 @@
 
   button.onclick = function () {
     modalOverlay.classList.add("show");
-    modalContent.classList.add("show");
+    setTimeout(function () {
+      modalContent.classList.add("show");
+    }, 10);
   };
 
   var currentScript = document.currentScript;
