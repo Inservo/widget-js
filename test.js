@@ -75,6 +75,7 @@
 
   closeButton.onclick = function () {
     modalContent.classList.remove("show");
+    modalOverlay.classList.remove("show");
     modalOverlay.style.animation = "overlayFadeOut 0.3s forwards";
     setTimeout(function () {
       modalOverlay.style.animation = "";
