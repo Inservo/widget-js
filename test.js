@@ -1,21 +1,38 @@
 (function () {
   var styleEl = document.createElement("style");
   styleEl.innerHTML = `
-    @keyframes fadeInOverlay {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      will-change: opacity;
     }
-    @keyframes fadeOutOverlay {
-      from { opacity: 1; }
-      to { opacity: 0; }
+    .modal-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
     }
-    @keyframes scaleInContent {
-      0% { opacity: 0; transform: scale(0.9); }
-      100% { opacity: 1; transform: scale(1); }
+    .modal-content {
+      background-color: #FFFFFF;
+      border-radius: 10px;
+      position: relative;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      will-change: opacity, transform;
     }
-    @keyframes scaleOutContent {
-      0% { opacity: 1; transform: scale(1); }
-      100% { opacity: 0; transform: scale(0.9); }
+    .modal-content.show {
+      opacity: 1;
+      transform: scale(1);
     }
   `;
   document.head.appendChild(styleEl);
@@ -38,29 +55,10 @@
   button.style.display = "inline-block";
 
   var modalOverlay = document.createElement("div");
-  Object.assign(modalOverlay.style, {
-    position: "fixed",
-    top: "0",
-    left: "0",
-    width: "100%",
-    height: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    zIndex: "9999",
-    opacity: "0",
-    pointerEvents: "none",
-  });
+  modalOverlay.className = "modal-overlay"
 
   var modalContent = document.createElement("div");
-  Object.assign(modalContent.style, {
-    backgroundColor: "#FFFFFF",
-    padding: "10px",
-    borderRadius: "10px",
-    position: "relative",
-    opacity: "0",
-  });
+  modalContent.className = "modal-content"
 
   var closeButton = document.createElement("button");
   closeButton.innerText = "X";
@@ -75,11 +73,8 @@
   });
 
   closeButton.onclick = function () {
-    modalOverlay.style.animation = "fadeOutOverlay 0.5s forwards";
-    modalContent.style.animation = "scaleOutContent 0.5s forwards";
-    setTimeout(function () {
-      modalOverlay.style.pointerEvents = "none";
-    }, 500);
+    modalOverlay.classList.remove("show");
+    modalContent.classList.remove("show");
     iframe.src = widgetUrl;
   };
   modalContent.appendChild(closeButton);
@@ -98,9 +93,8 @@
   document.body.appendChild(modalOverlay);
 
   button.onclick = function () {
-    modalOverlay.style.pointerEvents = "auto";
-    modalOverlay.style.animation = "fadeInOverlay 0.5s forwards";
-    modalContent.style.animation = "scaleInContent 0.5s forwards";
+    modalOverlay.classList.add("show");
+    modalContent.classList.add("show");
   };
 
   var currentScript = document.currentScript;
