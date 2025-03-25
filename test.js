@@ -8,16 +8,22 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.5);
-      display: none;
+      display: flex;
       align-items: center;
       justify-content: center;
       z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transfor 0.3 ease;
+      will-change: opacity, transform;
     }
     .modal-overlay.show {
-      display: flex;
+      opacity: 1;
+      pointer-events: auto;
     }
     .modal-content {
       background-color: #ffffff;
+      padding: 10px;
       border-radius: 10px;
       position: relative;
       opacity: 0;
