@@ -8,21 +8,16 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.5);
-      display: flex;
+      display: none; /* Hidden by default */
       align-items: center;
       justify-content: center;
       z-index: 9999;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      will-change: opacity;
     }
     .modal-overlay.show {
-      opacity: 1;
-      pointer-events: auto;
+      display: flex; 
     }
     .modal-content {
-      background-color: #FFFFFF;
+      background-color: #ffffff;
       border-radius: 10px;
       position: relative;
       opacity: 0;
@@ -87,8 +82,8 @@
     height: "700px",
     border: "none",
   });
-
   modalContent.appendChild(iframe);
+
   modalOverlay.appendChild(modalContent);
   document.body.appendChild(modalOverlay);
 
