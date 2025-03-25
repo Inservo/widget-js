@@ -19,7 +19,13 @@
       align-items: center;
       justify-content: center;
       z-index: 9999;
-      background-color: rgba(0, 0, 0, 0); /* start fully transparent */
+      background-color: rgba(0, 0, 0, 0);
+      pointer-events: none;
+      transition: background-color 0.3s ease;
+    }
+    .modal-overlay.show {
+      pointer-events: auto;
+      background-color: rgba(0, 0, 0, 0.5);
     }
     .modal-content {
       background-color: #ffffff;
@@ -76,11 +82,6 @@
   closeButton.onclick = function () {
     modalContent.classList.remove("show");
     modalOverlay.classList.remove("show");
-    modalOverlay.style.animation = "overlayFadeOut 0.3s forwards";
-    setTimeout(function () {
-      modalOverlay.style.animation = "";
-    }, 300);
-    iframe.src = widgetUrl;
   };
   modalContent.appendChild(closeButton);
 
@@ -99,16 +100,11 @@
 
   button.onclick = function () {
     modalOverlay.classList.add("show");
-    modalOverlay.style.animation = "overlayFadeIn 0.3s forwards";
-    setTimeout(function () {
-      modalOverlay.style.animation = "";
-    }, 300);
     setTimeout(function () {
       modalContent.classList.add("show");
     }, 10);
   };
 
-  var currentScript = document.currentScript;
   if (currentScript && currentScript.parentNode) {
     currentScript.parentNode.insertBefore(button, currentScript.nextSibling);
   } else {
