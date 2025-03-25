@@ -21,7 +21,7 @@
     height: "100%",
     backgroundColor: "rgba(0, 0, 0, 0.5)",
     visibility: "hidden",
-    display: "none",
+    display: "flex",
     alignItems: "center",
     justifyContent: "center",
     zIndex: "9999",
@@ -29,7 +29,7 @@
 
   var modalContent = document.createElement("div");
   Object.assign(modalContent.style, {
-    backgroundColor: "FFFFFF",
+    backgroundColor: "#FFFFFF",
     borderRadius: "10px",
     position: "relative",
   });
@@ -46,7 +46,7 @@
     cursor: "pointer",
   });
   closeButton.onclick = function () {
-    modalOverlay.style.display = "hidden";
+    modalOverlay.style.visibility = "hidden";
   };
 
   modalContent.appendChild(closeButton);
