@@ -14,7 +14,7 @@
       z-index: 9999;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.3s ease, transfor 0.3 ease;
+      transition: opacity 0.3s ease, transfor 0.3s ease;
       will-change: opacity, transform;
     }
     .modal-overlay.show {
