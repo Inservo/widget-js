@@ -3,10 +3,10 @@
   styleEl.innerHTML = `
     @keyframes widgetSlideUp {
       from { opacity: 0; transform: translateY(100%); }
-      to { opacity: 1; transform: translateY(50%); }
+      to { opacity: 1; transform: translateY(0); }
     }
     @keyframes widgetSlideDown {
-      from { opacity: 1; transform: translateY(50%); }
+      from { opacity: 1; transform: translateY(0); }
       to { opacity: 0; transform: translateY(100%); }
     }
     .modal-content-reservo {
@@ -20,8 +20,9 @@
       opacity: 0;
       will-change: opacity, transform;
       z-index: 9500;
-      transform: translateY(100%);
+      transform: translateY(50%);
       transition: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
     .modal-content-reservo.show {
       animation: widgetSlideUp 0.5s forwards;
@@ -33,6 +34,10 @@
         height: 100vh !important;
         border-radius: 0 !important;
         padding: 0 !important;
+        right: 0 !important;
+        left: 0 !important;
+        transform: translateY(100%);
+        transition: none;
       }
       .modal-content-reservo iframe {
         width: 100% !important;
@@ -126,10 +131,10 @@
   animStyle.innerHTML = `
     @keyframes widgetSlideUp {
       from { opacity: 0; transform: translateY(100%); }
-      to { opacity: 1; transform: translateY(50%); }
+      to { opacity: 1; transform: translateY(0); }
     }
     @keyframes widgetSlideDown {
-      from { opacity: 1; transform: translateY(50%); }
+      from { opacity: 1; transform: translateY(0); }
       to { opacity: 0; transform: translateY(100%); }
     }
   `;
