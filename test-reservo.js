@@ -109,8 +109,6 @@
   });
   modalContent.appendChild(iframe);
 
-  modalOverlay.appendChild(modalContent);
-
   button.onclick = function () {
     setTimeout(function () {
       modalContent.classList.add("show");
