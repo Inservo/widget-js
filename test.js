@@ -33,6 +33,8 @@
       margin: 0;
       border-radius: 10px;
       position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
       opacity: 0;
       transform: scale(0.9);
       transition: opacity 0.3s ease, transform 0.3s ease;
