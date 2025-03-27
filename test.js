@@ -9,7 +9,7 @@
       from { background-color: rgba(0, 0, 0, 0.5); }
       to { background-color: rgba(0, 0, 0, 0); }
     }
-    .modal-overlay {
+    .modal-overlay-button {
       position: fixed;
       top: 0;
       left: 0;
@@ -23,36 +23,34 @@
       pointer-events: none;
       transition: background-color 0.3s ease;
     }
-    .modal-overlay.show {
+    .modal-overlay-button.show {
       pointer-events: auto;
       background-color: rgba(0, 0, 0, 0.5);
     }
-    .modal-content {
+    .modal-content-button {
       background-color: #ffffff;
       padding: 0;
       margin: 0;
       border-radius: 10px;
       position: relative;
-      overflow: hidden;
-      box-sizing: border-box;
       opacity: 0;
       transform: scale(0.9);
       transition: opacity 0.3s ease, transform 0.3s ease;
       will-change: opacity, transform;
     }
-    .modal-content.show {
+    .modal-content-button.show {
       opacity: 1;
       transform: scale(1);
     }
     /* Mobile full-screen styles */
     @media (max-width: 768px) {
-      .modal-content {
+      .modal-content-button {
         width: 100% !important;
         height: 100vh !important;
         border-radius: 0 !important;
         padding: 0 !important;
       }
-      .modal-content iframe {
+      .modal-content-button iframe {
         width: 100% !important;
         height: 100vh !important;
       }
@@ -78,10 +76,10 @@
   button.style.display = "inline-block";
 
   var modalOverlay = document.createElement("div");
-  modalOverlay.className = "modal-overlay"
+  modalOverlay.className = "modal-overlay-button"
 
   var modalContent = document.createElement("div");
-  modalContent.className = "modal-content"
+  modalContent.className = "modal-content-button"
 
   var closeButton = document.createElement("button");
   closeButton.innerHTML = `

@@ -10,7 +10,7 @@
       from { background-color: rgba(0, 0, 0, 0.5); }
       to { background-color: rgba(0, 0, 0, 0); }
     }
-    .modal-overlay {
+    .modal-overlay-custom-button {
       position: fixed;
       top: 0;
       left: 0;
@@ -24,11 +24,11 @@
       pointer-events: none;
       transition: background-color 0.3s ease;
     }
-    .modal-overlay.show {
+    .modal-overlay-custom-button.show {
       pointer-events: auto;
       background-color: rgba(0, 0, 0, 0.5);
     }
-    .modal-content {
+    .modal-content-custom-button {
       background-color: #ffffff;
       padding: 10px;
       border-radius: 10px;
@@ -38,19 +38,19 @@
       transition: opacity 0.3s ease, transform 0.3s ease;
       will-change: opacity, transform;
     }
-    .modal-content.show {
+    .modal-content-custom-button.show {
       opacity: 1;
       transform: scale(1);
     }
     /* Mobile full-screen styles */
     @media (max-width: 768px) {
-      .modal-content {
+      .modal-content-custom-button {
         width: 100% !important;
         height: 100vh !important;
         border-radius: 0 !important;
         padding: 0 !important;
       }
-      .modal-content iframe {
+      .modal-content-custom-button iframe {
         width: 100% !important;
         height: 100vh !important;
       }
@@ -66,10 +66,10 @@
 
   // Create modal overlay and content elements.
   var modalOverlay = document.createElement("div");
-  modalOverlay.className = "modal-overlay";
+  modalOverlay.className = "modal-overlay-custom-button";
 
   var modalContent = document.createElement("div");
-  modalContent.className = "modal-content";
+  modalContent.className = "modal-content-custom-button";
 
   // Create close button inside the modal.
   var closeButton = document.createElement("button");
@@ -112,7 +112,7 @@
   document.body.appendChild(modalOverlay);
 
   // Expose a global function to open the modal.
-  window.openReservationWidget = function () {
+  window.openReservationWidgetCustomButton = function () {
     // Reset iframe in case it navigated away.
     iframe.src = widgetUrl;
     modalOverlay.classList.add("show");
@@ -131,6 +131,6 @@
 
   // For debugging, you can log that the widget is ready.
   console.log(
-    "Reservation widget loaded. Use window.openReservationWidget() to open it."
+    "Reservation widget loaded. Use window.openReservationWidgetCustomButton() to open it."
   );
 })();
