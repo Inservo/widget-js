@@ -40,22 +40,27 @@
 
   var button = document.createElement("button");
   button.innerHtml = `
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M10.9771 5.9545L10 0L9.02287 5.9545C8.75311 7.59844 7.4927 8.90306 5.85904 9.22931L2 10L5.85904 10.7707C7.4927 11.0969 8.75311 12.4016 9.02287 14.0455L10 20L10.9771 14.0455C11.2469 12.4016 12.5073 11.0969 14.141 10.7707L18 10L14.141 9.22931C12.5073 8.90306 11.2469 7.59844 10.9771 5.9545Z"
-        fill=#ffffff
-      />
-      <path
-        d="M15.5341 3.54817L15.28 2L15.0259 3.54817C14.9558 3.97559 14.6281 4.31479 14.2033 4.39962L13.2 4.6L14.2033 4.80038C14.6281 4.88521 14.9558 5.22441 15.0259 5.65183L15.28 7.2L15.5341 5.65183C15.6042 5.22441 15.9319 4.88521 16.3567 4.80038L17.36 4.6L16.3567 4.39962C15.9319 4.31479 15.6042 3.97559 15.5341 3.54817Z"
-        fill=#ffffff
-      />
+    <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g filter="url(#filter0_d_6882_80206)">
+      <rect width="46" height="46" rx="23" fill="#B2151B"/>
+      <path d="M26 23H28C28.5304 23 29.0391 23.2107 29.4142 23.5858C29.7893 23.9609 30 24.4696 30 25V36L26 32H20C19.4696 32 18.9609 31.7893 18.5858 31.4142C18.2107 31.0391 18 30.5304 18 30V29M22 23C22 23.5304 21.7893 24.0391 21.4142 24.4142C21.0391 24.7893 20.5304 25 20 25H14L10 29V18C10 16.9 10.9 16 12 16H20C20.5304 16 21.0391 16.2107 21.4142 16.5858C21.7893 16.9609 22 17.4696 22 18V23Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M32.5855 11.5727L31.9992 8L31.4129 11.5727C31.2511 12.5591 30.4948 13.3418 29.5146 13.5376L27.1992 14L29.5146 14.4624C30.4948 14.6582 31.2511 15.4409 31.4129 16.4273L31.9992 20L32.5855 16.4273C32.7474 15.4409 33.5036 14.6582 34.4838 14.4624L36.7992 14L34.4838 13.5376C33.5036 13.3418 32.7474 12.5591 32.5855 11.5727Z" fill="white"/>
+      <path d="M35.3197 10.1289L35.1672 9.2L35.0148 10.1289C34.9727 10.3854 34.7761 10.5889 34.5212 10.6398L33.9192 10.76L34.5212 10.8802C34.7761 10.9311 34.9727 11.1346 35.0148 11.3911L35.1672 12.32L35.3197 11.3911C35.3617 11.1346 35.5584 10.9311 35.8132 10.8802L36.4152 10.76L35.8132 10.6398C35.5584 10.5889 35.3617 10.3854 35.3197 10.1289Z" fill="white"/>
+      </g>
+      <defs>
+      <filter id="filter0_d_6882_80206" x="0" y="0" width="54" height="54" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dx="4" dy="4"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_6882_80206"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_6882_80206" result="shape"/>
+      </filter>
+      </defs>
     </svg>
+
   `;
   button.style.all = "unset";
   button.style.padding = "8px 8px";
