@@ -1,6 +1,14 @@
 (function () {
   var styleEl = document.createElement("style");
   styleEl.innerHTML = `
+    @keyframes slideUp {
+      from { transform: translateY(0); }
+      to { transform: translateY(-150%); }
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-150%); }
+      to { transform: translateY(0); }
+    }
     .modal-content-reservo {
       background-color: #ffffff;
       padding: 0;
@@ -98,7 +106,7 @@
 
   closeButton.onclick = function () {
     modalContent.classList.remove("show");
-    button.style.transform = "translateY(0)";
+    button.style.animation = "slideDown 0.3s forwards";
   };
   modalContent.appendChild(closeButton);
 
@@ -113,7 +121,7 @@
   modalContent.appendChild(iframe);
 
   button.onclick = function () {
-    button.style.transform = "translateY(-100%)";
+    button.style.animation = "slideUp 0.3s forwards";
     setTimeout(function () {
       modalContent.classList.add("show");
     }, 10);
