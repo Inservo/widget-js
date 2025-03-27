@@ -145,7 +145,7 @@
     setTimeout(function () {
       modalContent.classList.add("show");
       modalContent.style.animation = "";
-    }, 300);
+    }, 500);
   };
 
   if (currentScript && currentScript.parentNode) {
