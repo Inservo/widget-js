@@ -39,7 +39,7 @@
   var widgetUrl = currentScript && currentScript.dataset.widgetUrl;
 
   var button = document.createElement("button");
-  button.innerHtml = `
+  button.innerHTML = `
     <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g filter="url(#filter0_d_6882_80206)">
       <rect width="46" height="46" rx="23" fill="#B2151B"/>
@@ -66,7 +66,7 @@
   button.style.padding = "8px 8px";
   button.style.borderRadius = "8px";
   button.style.cursor = "pointer";
-  button.style.postion = "absolute";
+  button.style.position = "absolute";
   button.style.bottom = "16px";
   button.style.right = "16px";
   button.style.border = "none";
@@ -110,10 +110,8 @@
   modalContent.appendChild(iframe);
 
   modalOverlay.appendChild(modalContent);
-  document.body.appendChild(modalOverlay);
 
   button.onclick = function () {
-    modalOverlay.classList.add("show");
     setTimeout(function () {
       modalContent.classList.add("show");
     }, 10);
