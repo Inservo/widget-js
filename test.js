@@ -29,6 +29,7 @@
     }
     .modal-content {
       background-color: #ffffff;
+      padding 0;
       border-radius: 10px;
       position: relative;
       opacity: 0;
