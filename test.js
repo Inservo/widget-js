@@ -53,7 +53,7 @@
   button.style.all = "unset"
   button.style.padding = "8px 12px";
   button.style.backgroundColor = "#000000";
-  button.style.borderRadius = "8px";
+  button.style.borderRadius = "20px";
   button.style.color = "#FFFFFF";
   button.style.cursor = "pointer";
   button.style.fontSize = "14px";
@@ -82,6 +82,8 @@
     border: "none",
     fontSize: "20px",
     cursor: "pointer",
+    borderRadius: "10px",
+    zIndex: "9999",
   });
 
   closeButton.onclick = function () {
