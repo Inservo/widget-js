@@ -2,12 +2,12 @@
   var styleEl = document.createElement("style");
   styleEl.innerHTML = `
     @keyframes widgetSlideUp {
-      from { opacity: 0; transform: translateY(100%); }
+      from { opacity: 0; transform: translateY(50%); }
       to { opacity: 1; transform: translateY(0); }
     }
     @keyframes widgetSlideDown {
       from { opacity: 1; transform: translateY(0); }
-      to { opacity: 0; transform: translateY(100%); }
+      to { opacity: 0; transform: translateY(50%); }
     }
     .modal-content-reservo {
       background-color: #ffffff;
@@ -18,6 +18,7 @@
       right: 16px;
       bottom: 16px;
       opacity: 0;
+      pointer-events: none;
       will-change: opacity, transform;
       z-index: 9500;
       transform: translateY(50%);
@@ -130,12 +131,12 @@
   var animStyle = document.createElement("style");
   animStyle.innerHTML = `
     @keyframes widgetSlideUp {
-      from { opacity: 0; transform: translateY(100%); }
+      from { opacity: 0; transform: translateY(50%); }
       to { opacity: 1; transform: translateY(0); }
     }
     @keyframes widgetSlideDown {
       from { opacity: 1; transform: translateY(0); }
-      to { opacity: 0; transform: translateY(100%); }
+      to { opacity: 0; transform: translateY(50%); }
     }
   `;
   document.head.appendChild(animStyle);
