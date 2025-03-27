@@ -71,7 +71,7 @@
   button.style.right = "16px";
   button.style.border = "none";
   button.style.zIndex = "9000";
-  document.body.appendChild("button");
+  document.body.appendChild(button);
 
   var modalContent = document.createElement("div");
   modalContent.className = "modal-content-reservo";
