@@ -52,15 +52,22 @@
 
   // Create close button inside the modal.
   var closeButton = document.createElement("button");
-  closeButton.innerText = "X";
+  closeButton.innerHTML = `
+  <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.5 5.5L5.5 15.5M5.5 5.5L15.5 15.5" stroke="black" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  `;
   Object.assign(closeButton.style, {
     position: "absolute",
-    top: "10px",
-    right: "10px",
+    top: "16px",
+    right: "16px",
+    padding: "11.5px",
     background: "transparent",
     border: "none",
     fontSize: "20px",
     cursor: "pointer",
+    borderRadius: "10px",
+    zIndex: "9999",
   });
   closeButton.onclick = function () {
     modalContent.classList.remove("show");

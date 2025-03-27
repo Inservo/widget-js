@@ -41,6 +41,19 @@
       opacity: 1;
       transform: scale(1);
     }
+    /* Mobile full-screen styles */
+    @media (max-width: 768px) {
+      .modal-content {
+        width: 100% !important;
+        height: 100vh !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+      }
+      .modal-content iframe {
+        width: 100% !important;
+        height: 100vh !important;
+      }
+    }
   `;
   document.head.appendChild(styleEl);
 
@@ -51,12 +64,12 @@
   button.innerText = "Book Now";
 
   button.style.all = "unset"
-  button.style.padding = "8px 12px";
+  button.style.padding = "12px 16px";
   button.style.backgroundColor = "#000000";
   button.style.borderRadius = "20px";
   button.style.color = "#FFFFFF";
   button.style.cursor = "pointer";
-  button.style.fontSize = "14px";
+  button.style.fontSize = "16px";
   button.style.fontFamily = "Inter, sans-serif";
   button.style.boxSizing = "border-box";
   button.style.display = "inline-block";
