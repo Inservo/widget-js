@@ -3,10 +3,10 @@
   styleEl.innerHTML = `
     @keyframes widgetSlideUp {
       from { opacity: 0; transform: translateY(100%); }
-      to { opacity: 1; transform: translateY(0); }
+      to { opacity: 1; transform: translateY(50%); }
     }
     @keyframes widgetSlideDown {
-      from { opacity: 1; transform: translateY(0); }
+      from { opacity: 1; transform: translateY(50%); }
       to { opacity: 0; transform: translateY(100%); }
     }
     .modal-content-reservo {
@@ -24,7 +24,7 @@
       transition: none;
     }
     .modal-content-reservo.show {
-      animation: widgetSlideUp 0.3s forwards;
+      animation: widgetSlideUp 0.5s forwards;
     }
     /* Mobile full-screen styles */
     @media (max-width: 768px) {
@@ -104,7 +104,7 @@
   });
 
   closeButton.onclick = function () {
-    modalContent.style.animation = "widgetSlideDown 0.3s forwards";
+    modalContent.style.animation = "widgetSlideDown 0.5s forwards";
     setTimeout(function () {
       modalContent.classList.remove("show");
       modalContent.style.animation = "";
@@ -126,17 +126,17 @@
   animStyle.innerHTML = `
     @keyframes widgetSlideUp {
       from { opacity: 0; transform: translateY(100%); }
-      to { opacity: 1; transform: translateY(0); }
+      to { opacity: 1; transform: translateY(50%); }
     }
     @keyframes widgetSlideDown {
-      from { opacity: 1; transform: translateY(0); }
+      from { opacity: 1; transform: translateY(50%); }
       to { opacity: 0; transform: translateY(100%); }
     }
   `;
   document.head.appendChild(animStyle);
 
   button.onclick = function () {
-    modalContent.style.animation = "widgetSlideUp 0.3s forwards";
+    modalContent.style.animation = "widgetSlideUp 0.5s forwards";
     setTimeout(function () {
       modalContent.classList.add("show");
       modalContent.style.animation = "";
