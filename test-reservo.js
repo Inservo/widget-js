@@ -1,13 +1,13 @@
 (function () {
   var styleEl = document.createElement("style");
   styleEl.innerHTML = `
-    @keyframes slideUp {
-      from { transform: translateY(0); }
-      to { transform: translateY(-150%); }
+    @keyframes widgetSlideUp {
+      from { opacity: 0; transform: translateY(100%); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    @keyframes slideDown {
-      from { transform: translateY(-150%); }
-      to { transform: translateY(0); }
+    @keyframes widgetSlideDown {
+      from { opacity: 1; transform: translateY(0); }
+      to { opacity: 0; transform: translateY(100%); }
     }
     .modal-content-reservo {
       background-color: #ffffff;
@@ -18,14 +18,13 @@
       right: 16px;
       bottom: 16px;
       opacity: 0;
-      transform: scale(0.9);
-      transition: opacity 0.3s ease, transform 0.3s ease;
       will-change: opacity, transform;
       z-index: 9500;
+      transform: translateY(100%)
+      transition: none;
     }
     .modal-content-reservo.show {
-      opacity: 1;
-      transform: scale(1);
+      animation: widgetSlideUp 0.3s forwards;
     }
     /* Mobile full-screen styles */
     @media (max-width: 768px) {
@@ -105,8 +104,11 @@
   });
 
   closeButton.onclick = function () {
-    modalContent.classList.remove("show");
-    button.style.animation = "slideDown 0.3s forwards";
+    modalContent.style.animation = "widgetSlideDown 0.3s forwards";
+    setTimeout(function () {
+      modalContent.classList.remove("show");
+      modalContent.style.animation = "";
+    }, 300);
   };
   modalContent.appendChild(closeButton);
 
@@ -120,11 +122,25 @@
   });
   modalContent.appendChild(iframe);
 
+  var animStyle = document.createElement("style");
+  animStyle.innerHTML = `
+    @keyframes widgetSlideUp {
+      from { opacity: 0; transform: translateY(100%); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes widgetSlideDown {
+      from { opacity: 1; transform: translateY(0); }
+      to { opacity: 0; transform: translateY(100%); }
+    }
+  `;
+  document.head.appendChild(animStyle);
+
   button.onclick = function () {
-    button.style.animation = "slideUp 0.3s forwards";
+    modalContent.style.animation = "widgetSlideUp 0.3s forwards";
     setTimeout(function () {
       modalContent.classList.add("show");
-    }, 10);
+      modalContent.style.animation = "";
+    }, 300);
   };
 
   if (currentScript && currentScript.parentNode) {
