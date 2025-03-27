@@ -30,7 +30,7 @@
     }
     .modal-content-custom-button {
       background-color: #ffffff;
-      padding: 10px;
+      padding: 0;
       border-radius: 10px;
       position: relative;
       opacity: 0;
@@ -103,8 +103,9 @@
   iframe.src = widgetUrl;
   Object.assign(iframe.style, {
     width: "512px",
-    height: "min(700px, 90vh)",
+    height: "min(700px, 85vh)",
     border: "none",
+    padding: "10px",
   });
   modalContent.appendChild(iframe);
 
