@@ -6,7 +6,7 @@
       padding: 0;
       margin: 0;
       border-radius: 10px;
-      position: absolute;
+      position: fixed;
       right: 16px;
       bottom: 16px;
       opacity: 0;
@@ -66,7 +66,7 @@
   button.style.padding = "0";
   button.style.borderRadius = "8px";
   button.style.cursor = "pointer";
-  button.style.position = "absolute";
+  button.style.position = "fixed";
   button.style.bottom = "16px";
   button.style.right = "16px";
   button.style.border = "none";
