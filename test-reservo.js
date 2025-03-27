@@ -113,7 +113,7 @@
     setTimeout(function () {
       modalContent.classList.remove("show");
       modalContent.style.animation = "";
-    }, 300);
+    }, 500);
   };
   modalContent.appendChild(closeButton);
 
