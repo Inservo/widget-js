@@ -85,7 +85,7 @@
   `;
   Object.assign(closeButton.style, {
     position: "absolute",
-    bottom: "16px",
+    top: "16px",
     right: "16px",
     padding: "11.5px",
     background: "transparent",
@@ -98,6 +98,7 @@
 
   closeButton.onclick = function () {
     modalContent.classList.remove("show");
+    button.style.transform = "translateY(0)";
   };
   modalContent.appendChild(closeButton);
 
@@ -112,6 +113,7 @@
   modalContent.appendChild(iframe);
 
   button.onclick = function () {
+    button.style.transform = "translateY(-100%)";
     setTimeout(function () {
       modalContent.classList.add("show");
     }, 10);
