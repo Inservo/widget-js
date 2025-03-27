@@ -2,12 +2,12 @@
   var styleEl = document.createElement("style");
   styleEl.innerHTML = `
     @keyframes widgetSlideUp {
-      from { opacity: 0; transform: translateY(50%); }
+      from { opacity: 0; transform: translateY(75%); }
       to { opacity: 1; transform: translateY(0); }
     }
     @keyframes widgetSlideDown {
       from { opacity: 1; transform: translateY(0); }
-      to { opacity: 0; transform: translateY(50%); }
+      to { opacity: 0; transform: translateY(75%); }
     }
     .modal-content-reservo {
       background-color: #ffffff;
@@ -21,11 +21,12 @@
       pointer-events: none;
       will-change: opacity, transform;
       z-index: 9500;
-      transform: translateY(50%);
+      transform: translateY(75%);
       transition: none;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
     .modal-content-reservo.show {
+      pointer-events: auto;
       animation: widgetSlideUp 0.5s forwards;
     }
     /* Mobile full-screen styles */
@@ -37,7 +38,7 @@
         padding: 0 !important;
         right: 0 !important;
         left: 0 !important;
-        transform: translateY(100%);
+        transform: translateY(75%);
         transition: none;
       }
       .modal-content-reservo iframe {
@@ -131,12 +132,12 @@
   var animStyle = document.createElement("style");
   animStyle.innerHTML = `
     @keyframes widgetSlideUp {
-      from { opacity: 0; transform: translateY(50%); }
+      from { opacity: 0; transform: translateY(75%); }
       to { opacity: 1; transform: translateY(0); }
     }
     @keyframes widgetSlideDown {
       from { opacity: 1; transform: translateY(0); }
-      to { opacity: 0; transform: translateY(50%); }
+      to { opacity: 0; transform: translateY(75%); }
     }
   `;
   document.head.appendChild(animStyle);
