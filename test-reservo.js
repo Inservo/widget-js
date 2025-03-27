@@ -29,12 +29,14 @@
     }
     .modal-content {
       background-color: #ffffff;
+      padding: 10px;
       border-radius: 10px;
       position: relative;
       opacity: 0;
       transform: scale(0.9);
       transition: opacity 0.3s ease, transform 0.3s ease;
       will-change: opacity, transform;
+      z-index: 9999;
     }
     .modal-content.show {
       opacity: 1;
@@ -62,7 +64,7 @@
   var button = document.createElement("button");
   button.innerText = "Book Now";
 
-  button.style.all = "unset"
+  button.style.all = "unset";
   button.style.padding = "12px 16px";
   button.style.backgroundColor = "#000000";
   button.style.borderRadius = "24px";
@@ -74,10 +76,10 @@
   button.style.display = "inline-block";
 
   var modalOverlay = document.createElement("div");
-  modalOverlay.className = "modal-overlay"
+  modalOverlay.className = "modal-overlay";
 
   var modalContent = document.createElement("div");
-  modalContent.className = "modal-content"
+  modalContent.className = "modal-content";
 
   var closeButton = document.createElement("button");
   closeButton.innerHTML = `
@@ -105,8 +107,7 @@
   modalContent.appendChild(closeButton);
 
   var iframe = document.createElement("iframe");
-  iframe.src =
-    widgetUrl;
+  iframe.src = widgetUrl;
   Object.assign(iframe.style, {
     width: "512px",
     height: "min(700px, 85vh)",
