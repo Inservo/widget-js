@@ -68,8 +68,11 @@
   modalContent.className = "modal-content"
 
   var closeButton = document.createElement("button");
-  closeButton.innerHTML =
-    '<img src="x.svg" alt="Close" style="width:20px; height:20px;">';
+  closeButton.innerHTML = `
+    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15.5 5.5L5.5 15.5M5.5 5.5L15.5 15.5" stroke="black" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  `;
   Object.assign(closeButton.style, {
     position: "absolute",
     top: "16px",
