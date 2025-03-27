@@ -111,6 +111,7 @@
     width: "512px",
     height: "min(700px, 85vh)",
     border: "none",
+    borderRadius: "10px",
   });
   modalContent.appendChild(iframe);
 
