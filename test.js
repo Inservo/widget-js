@@ -66,7 +66,7 @@
   button.style.all = "unset"
   button.style.padding = "12px 16px";
   button.style.backgroundColor = "#000000";
-  button.style.borderRadius = "20px";
+  button.style.borderRadius = "24px";
   button.style.color = "#FFFFFF";
   button.style.cursor = "pointer";
   button.style.fontSize = "16px";

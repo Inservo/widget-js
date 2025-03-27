@@ -2,6 +2,14 @@
   // Inject CSS for overlay and modal transitions
   var styleEl = document.createElement("style");
   styleEl.innerHTML = `
+    @keyframes overlayFadeIn {
+      from { background-color: rgba(0, 0, 0, 0); }
+      to { background-color: rgba(0, 0, 0, 0.5); }
+    }
+    @keyframes overlayFadeOut {
+      from { background-color: rgba(0, 0, 0, 0.5); }
+      to { background-color: rgba(0, 0, 0, 0); }
+    }
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -33,6 +41,19 @@
     .modal-content.show {
       opacity: 1;
       transform: scale(1);
+    }
+    /* Mobile full-screen styles */
+    @media (max-width: 768px) {
+      .modal-content {
+        width: 100% !important;
+        height: 100vh !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+      }
+      .modal-content iframe {
+        width: 100% !important;
+        height: 100vh !important;
+      }
     }
   `;
   document.head.appendChild(styleEl);
