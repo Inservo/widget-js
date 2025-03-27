@@ -63,7 +63,7 @@
 
   `;
   button.style.all = "unset";
-  button.style.padding = "8px 8px";
+  button.style.padding = "0";
   button.style.borderRadius = "8px";
   button.style.cursor = "pointer";
   button.style.position = "absolute";
@@ -85,7 +85,7 @@
   `;
   Object.assign(closeButton.style, {
     position: "absolute",
-    top: "16px",
+    bottom: "16px",
     right: "16px",
     padding: "11.5px",
     background: "transparent",
