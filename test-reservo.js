@@ -13,7 +13,7 @@
       transform: scale(0.9);
       transition: opacity 0.3s ease, transform 0.3s ease;
       will-change: opacity, transform;
-      z-index: 9999;
+      z-index: 9500;
     }
     .modal-content-reservo.show {
       opacity: 1;
@@ -71,9 +71,11 @@
   button.style.right = "16px";
   button.style.border = "none";
   button.style.zIndex = "9000";
+  document.body.appendChild("button");
 
   var modalContent = document.createElement("div");
   modalContent.className = "modal-content-reservo";
+  document.body.appendChild(modalContent);
 
   var closeButton = document.createElement("button");
   closeButton.innerHTML = `
