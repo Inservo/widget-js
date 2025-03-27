@@ -20,7 +20,7 @@
       opacity: 0;
       will-change: opacity, transform;
       z-index: 9500;
-      transform: translateY(100%)
+      transform: translateY(100%);
       transition: none;
     }
     .modal-content-reservo.show {
